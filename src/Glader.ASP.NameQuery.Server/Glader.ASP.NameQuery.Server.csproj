@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RootNamespace>Glader.ASP.NameQuery</RootNamespace>
+    <Version>0.0.1</Version>
+    <Authors>Andrew Blakely, Glader</Authors>
+    <Product>Glader.ASP.NameQuery</Product>
+    <Description>Glader.ASP.NameQuery is an ASP Core, EntityFramework, Refit-based and JSON-based NameQuery library.</Description>
+    <PackageProjectUrl>https://github.com/HelloKitty/Glader.ASP.NameQuery</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/HelloKitty/Glader.ASP.NameQuery</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Glader ASP Name Query NameQuery</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Glader.Essentials.ASP" Version="2.2.49" />
+    <PackageReference Include="Glader.Essentials.Database" Version="2.2.49" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.10" />
+  </ItemGroup>
+
+</Project>
