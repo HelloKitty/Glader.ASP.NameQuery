@@ -18,6 +18,7 @@ namespace Glader.ASP.NameQuery
 		/// </summary>
 		/// <param name="id">The entity id.</param>
 		/// <returns>A query response.</returns>
+		[Get("/{id}/name")]
 		Task<EntityNameQueryResponse> QueryEntityNameAsync([AliasAs("id")] ulong id);
 	}
 }
