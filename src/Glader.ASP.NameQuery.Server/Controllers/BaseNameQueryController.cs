@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Glader.ASP.NameQuery
 {
-	public abstract class BaseNameQueryController<TObjectGuidType> : AuthorizationReadyController
+	public abstract class BaseNameQueryController<TObjectGuidType> : AuthorizationReadyController, INameQueryService
 		where TObjectGuidType : BaseGuid
 	{
 		/// <inheritdoc />

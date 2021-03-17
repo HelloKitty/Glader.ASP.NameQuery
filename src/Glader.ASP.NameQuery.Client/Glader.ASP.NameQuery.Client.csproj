@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -19,17 +19,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Glader.Essentials.ASP" Version="2.2.64" />
-    <PackageReference Include="Glader.Essentials.Database" Version="2.2.64" />
-    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.10" />
+    <PackageReference Include="Glader.Essentials.Refit" Version="2.2.64" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Glader.ASP.NameQuery.Client\Glader.ASP.NameQuery.Client.csproj" />
     <ProjectReference Include="..\Glader.ASP.NameQuery.Models\Glader.ASP.NameQuery.Models.csproj" />
   </ItemGroup>
 
