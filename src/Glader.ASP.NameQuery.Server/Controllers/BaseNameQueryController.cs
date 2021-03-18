@@ -11,6 +11,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Glader.ASP.NameQuery
 {
+	/// <summary>
+	/// Controller endpoint implementing <see cref="INameQueryService"/>.
+	/// </summary>
+	/// <typeparam name="TObjectGuidType">The entity guid type.</typeparam>
 	public abstract class BaseNameQueryController<TObjectGuidType> : AuthorizationReadyController, INameQueryService
 		where TObjectGuidType : BaseGuid
 	{
