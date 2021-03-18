@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Glader.Essentials;
 using JetBrains.Annotations;
@@ -25,14 +26,14 @@ namespace Glader.ASP.NameQuery
 		[ProducesJson]
 		[ResponseCache(Duration = 360)] //We want to cache this for a long time. But it's possible with name changes that we want to not cache forever
 		[HttpGet("{id}/name")]
-		public async Task<EntityNameQueryResponse> QueryEntityNameAsync([FromRoute(Name = "id")] ulong id)
+		public async Task<EntityNameQueryResponse> QueryEntityNameAsync([FromRoute(Name = "id")] ulong id, CancellationToken token = default)
 		{
 			//TODO: This is a low approach
 			//See benchmarks: https://github.com/KSemenenko/CreateInstance
 			TObjectGuidType guid = (TObjectGuidType)Activator.CreateInstance(typeof(TObjectGuidType), new object[] {id});
 
 			//Since this is a GET we can't send a JSON model. We have to use this process instead, sending the raw guid value.
-			ResponseModel<string, NameQueryResponseCode> result = await QueryEntityNameAsync(guid);
+			ResponseModel<string, NameQueryResponseCode> result = await QueryEntityNameAsync(guid, token);
 
 			if (result is EntityNameQueryResponse castedResult)
 				return castedResult;
@@ -63,8 +64,9 @@ namespace Glader.ASP.NameQuery
 		/// based on the provided <see cref="ObjectGuid{TEntityType}"/>.
 		/// </summary>
 		/// <param name="guid">The guid to query a name for.</param>
+		/// <param name="token">Cancel token.</param>
 		/// <returns>A name query response model.</returns>
-		protected abstract Task<ResponseModel<string, NameQueryResponseCode>> QueryEntityNameAsync(TObjectGuidType guid);
+		protected abstract Task<ResponseModel<string, NameQueryResponseCode>> QueryEntityNameAsync(TObjectGuidType guid, CancellationToken token = default);
 
 		/// <summary>
 		/// Implementer should implement reverse name query logic and produce a result for the query
@@ -72,8 +74,9 @@ namespace Glader.ASP.NameQuery
 		/// it's acceptable for the implementer to return a result indicating this.
 		/// </summary>
 		/// <param name="name">The entity name.</param>
+		/// <param name="token">Cancel token.</param>
 		/// <returns>A reverse name query response model.</returns>
-		protected virtual Task<ResponseModel<TObjectGuidType, NameQueryResponseCode>> QueryEntityGuidAsync(string name)
+		protected virtual Task<ResponseModel<TObjectGuidType, NameQueryResponseCode>> QueryEntityGuidAsync(string name, CancellationToken token = default)
 		{
 			return Task.FromResult(new ResponseModel<TObjectGuidType, NameQueryResponseCode>(NameQueryResponseCode.Unsupported));
 		}
