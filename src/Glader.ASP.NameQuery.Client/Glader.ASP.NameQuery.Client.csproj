@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <RootNamespace>Glader.ASP.NameQuery</RootNamespace>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>Andrew Blakely, Glader</Authors>
     <Product>Glader.ASP.NameQuery</Product>
     <Description>Glader.ASP.NameQuery is an ASP Core, EntityFramework, Refit-based and JSON-based NameQuery library.</Description>
