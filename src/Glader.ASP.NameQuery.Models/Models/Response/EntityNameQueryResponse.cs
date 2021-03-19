@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Glader.Essentials;
+using Newtonsoft.Json;
 
 namespace Glader.ASP.NameQuery
 {
@@ -23,6 +24,16 @@ namespace Glader.ASP.NameQuery
 			: base(result)
 		{
 
+		}
+
+		/// <summary>
+		/// Serializer ctor.
+		/// </summary>
+		[JsonConstructor]
+		public EntityNameQueryResponse()
+			: base(NameQueryResponseCode.GeneralServerError)
+		{
+			
 		}
 	}
 }
