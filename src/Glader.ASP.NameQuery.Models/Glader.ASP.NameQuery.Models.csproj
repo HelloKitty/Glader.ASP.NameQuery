@@ -19,8 +19,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Glader.Essentials.GUID" Version="2.2.64" />
-    <PackageReference Include="Glader.Essentials.Models" Version="2.2.64" />
+    <PackageReference Include="Glader.Essentials.GUID" Version="2.2.66" />
+    <PackageReference Include="Glader.Essentials.Models" Version="2.2.66" />
   </ItemGroup>
 
 </Project>

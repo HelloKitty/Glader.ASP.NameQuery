@@ -16,10 +16,11 @@
     <PackageTags>Glader ASP Name Query NameQuery</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Glader.Essentials.Refit" Version="2.2.64" />
+    <PackageReference Include="Glader.Essentials.Refit" Version="2.2.66" />
   </ItemGroup>
 
   <ItemGroup>
